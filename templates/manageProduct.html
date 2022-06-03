@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Near By Restaurant</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<style>
+    table, th, td {
+      border:1px solid black;
+      font-size: 20px;
+    }
+    </style>
+<body>
+    
+<!-- header section starts      -->
+
+<header>
+
+    <a href="http://127.0.0.1:8000/" class="logo"><i class="fas fa-utensils"></i> Near By Restaurant</a>
+
+    <nav class="navbar">
+        <a href="http://127.0.0.1:8000/">Home</a>
+        <a href="http://127.0.0.1:8000/NearByRestaurantApp/addNewRestaurant">Add New Restaurant</a>
+    </nav>
+    <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+        
+       
+        
+    </div>
+
+</header>
+
+<!-- header section ends-->
+
+<!-- search form  -->
+
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="swiper-container home-slider">
+
+        <div class="swiper-wrapper wrapper">
+
+            <div class="swiper-slide slide">
+                <div class="content">
+                    {% for rest in restaurants %}
+                    <table style="width:100%" >
+                      <tr>
+                        <th>Restaurant</th>
+                        <th>Action</th>
+                        <th>Action</th>
+                      </tr>
+                        <td>{{rest.title}}</td>
+                        <td><a href="http://127.0.0.1:8000/NearByRestaurantApp/editRestaurant?rest_id={{rest.id_id}}">Edit Name</a></td>
+                        <td><a href="http://127.0.0.1:8000/NearByRestaurantApp/deleteRestaurant?rest_id={{rest.id_id}}">Delete</a></td>
+                      </tr>
+                    </table> 
+                     {% endfor %}
+                  
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+
+    </div>
+
+</section> 
+<!-- home section ends -->
+
+<!-- dishes section starts  -->
+
+
+
+<!-- footer section ends -->
+
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
