@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Catelogue</title>
+    <title>Near By Restaurant</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
@@ -22,14 +22,14 @@
 
 <header>
 
-    <a href="http://127.0.0.1:8000/" class="logo"><i class="fas fa-utensils"></i>Recipes.</a>
+    <a href="http://127.0.0.1:8000/" class="logo"><i class="fas fa-utensils"></i> Near By Restaurant</a>
 
     <nav class="navbar">
-        <a href="http://127.0.0.1:8000/">home</a>
-        <a href="http://127.0.0.1:8000/recipeApp/recipes/">Recipes Catelogue</a>
-        <a href="http://127.0.0.1:8000/recipeApp/dataModel">Data Model</a>
+        <a href="http://127.0.0.1:8000/">Home</a>
+        <a href="http://127.0.0.1:8000/NearByRestaurantApp/search/">Search Restaurant</a>
+        <a href="http://127.0.0.1:8000/NearByRestaurantApp/nearByRestaurant?search_keyword=">Near By Restaurant</a>
+        <a href="http://127.0.0.1:8000/NearByRestaurantApp/manageRestaurant">Manage Restaurants</a>
     </nav>
-
     <div class="icons">
         <i class="fas fa-bars" id="menu-bars"></i>
         
@@ -54,8 +54,8 @@
 
             <div class="swiper-slide slide">
                 <div class="content">
-                    <h3>Recipes Catelogue</h3>
-                    <b><p>We Chose Recipes Catelogue Because we all are foodie  and relate to it so It's easier to communicate between the teams as everyone have some knowledge about recipes and related stuff,Our project have mainly 3 pages Home, recipes Catelogue and recipe Detail page, Recipes Catelogue shows all the Recipes we have in our database and its dynamic , we can add more recipes from admin panel and when you click on the particular recipe you will find to know the all other details regarding that Recipe.</p>
+                    <h3>Near By Restaurant</h3>
+                    <b><p>Near By Restaurant is Web App where you can find restaurants near you , Can add , edit ,delete restaurants and one can also search restaurant</p>
                     <br>
                     </b><span>Group Members:</span>
                     <p>Hamza Farooq - s349021 <br>
@@ -65,7 +65,9 @@
                         Email: s333546@students.cdu.edu.au <br>
                         Khang Nguyen (Dave) - s311849 <br>
                         Email: S311849@students.cdu.edu.au</p>
-                    <a href="http://127.0.0.1:8000/recipeApp/recipes/" class="btn">Show Catelogue</a>
+                    <a href="http://127.0.0.1:8000/NearByRestaurantApp/search" class="btn">Search Restaurant</a>
+                    <a href="http://127.0.0.1:8000/NearByRestaurantApp/nearByRestaurant?search_keyword=" class="btn">Near By Restaurant</a>
+                    
                 </div>
                 <div class="image">
                     <img src="{% static 'images/home-img-1.png' %}" alt="">
@@ -88,10 +90,6 @@
 
 <!-- footer section ends -->
 
-<!-- loader part  -->
-<div class="loader-container">
-    <img src="{% static 'images/loader.gif' %}" alt="">
-</div>
 
 
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

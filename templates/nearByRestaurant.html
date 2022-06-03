@@ -1,0 +1,70 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurants</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    
+
+<header>
+
+    <a href="http://127.0.0.1:8000/" class="logo"><i class="fas fa-utensils"></i>Near By Restaurant.</a>
+
+    <nav class="navbar">
+        <a href="http://127.0.0.1:8000/">Home</a>
+        <a href="http://127.0.0.1:8000/NearByRestaurantApp/search/">Search Restaurant</a>
+        <a href="http://127.0.0.1:8000/NearByRestaurantApp/nearByRestaurant?search_keyword=">Near By Restaurant</a>
+        <a href="http://127.0.0.1:8000/NearByRestaurantApp/manageRestaurant">Manage Restaurants</a>
+    </nav>
+
+    <div class="icons">
+        <i class="fas fa-bars" id="menu-bars"></i>
+    </div>
+
+</header>
+
+<section class="dishes" id="dishes">
+    <br><br><br>
+    <h3 class="sub-heading"> Restaurants </h3>
+    <h1 class="heading"> Popular Restaurants </h1>
+
+    <div class="box-container">
+    
+{% for rest in restaurants %}
+
+        <div class="box">
+            <a href="http://127.0.0.1:8000/NearByRestaurantApp/restaurantDetails?rest_id={{rest.id_id}}" class="fas fa-eye"></a>
+            <a href="http://127.0.0.1:8000/NearByRestaurantApp/restaurantDetails?rest_id={{rest.id_id}}" >
+            <img src="{{rest.img.url}}" alt=""> </a>
+            <h3>{{rest.title}}</h3>
+            <div class="stars">
+                <h4 style="text-align: left;">{{rest.desc|truncatewords:"50"}}</h4>
+            </div>
+            <a href="http://127.0.0.1:8000/NearByRestaurantApp/restaurantDetails?rest_id={{rest.id_id}}" class="btn">Restaurant Details</a>
+        </div>
+        {% endfor %}
+    </div>
+
+</section>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="{% static 'js/script.js' %}"></script>
+
+</body>
+</html>
