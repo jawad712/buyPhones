@@ -15,6 +15,8 @@ urlpatterns = [
     path('editRestaurant',views.editRestaurant),
     path('updateRestaurant',views.updateRestaurant),
     path('addRestaurant',views.addRestaurant),
+    path('restaurantDetails',views.show_restaurantDetails),
+    path('search/',views.show_search),
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

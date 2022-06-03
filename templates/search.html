@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8"> 
+       
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <link rel="stylesheet"  href="{% static 'css/search-style.css' %}">
+        <title>Near By Restaurant</title>
+      
+    </head>
+    <body>
+        <div class="search-box">
+            <input class="search-txt" type="text" name="search" id='search' placeholder="Type to search">
+            <a class="search-btn" href = "javascript:;" onclick = "this.href='http://127.0.0.1:8000/NearByRestaurantApp/nearByRestaurant/?search_keyword=' + document.getElementById('search').value">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+    </body>
+</html>

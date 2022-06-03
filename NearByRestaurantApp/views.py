@@ -76,3 +76,16 @@ def deleteRestaurant(request):
     except:
        print("something Went Wrong while deleting restaurant")
 
+def show_restaurantDetails(request):
+    try:
+        rest_id = request.GET['rest_id']
+        restaurant = Restaurant.objects.get(id_id=rest_id)
+        return render(request,'restaurantDetails.html',{"restaurant":restaurant})    
+    except:
+        print('Something Went Wrong')
+def show_search(request):
+    try:
+        return render(request,'search.html')
+    except:
+        print('Something Went Wrong')
+
