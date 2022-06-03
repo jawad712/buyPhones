@@ -9,6 +9,12 @@ from django.conf.urls.static import static
 urlpatterns = [
     path("",views.homepage),
     path('nearByRestaurant/',views.near_buy_restaurants),
+    path('manageRestaurant',views.manageRestaurant),
+    path('deleteRestaurant',views.deleteRestaurant),
+    path('addNewRestaurant',views.addNewRestaurant),
+    path('editRestaurant',views.editRestaurant),
+    path('updateRestaurant',views.updateRestaurant),
+    path('addRestaurant',views.addRestaurant),
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
